@@ -11,7 +11,7 @@
    },
 
   "content_scripts": [ {
-  "js": [ "filtro.js" ],
+  "js": [ "filter.js" ],
   "matches": [ "*://*.facebook.com/*" ],
   "run_at": "document_start"
    } ],
