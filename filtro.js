@@ -9,9 +9,12 @@
                 for (var ii = 0, nn = nodes.length; ii < nn; ii++) {
                     var text = nodes[ii] ? nodes[ii].textContent.toLowerCase() : '';
 
-                    if (text && text.indexOf('lanacion') >= 0 && nodes[ii].style.display != 'none') {
-                        nodes[ii].style.display = 'none';
-                        chrome.runtime.sendMessage({action: "removeTrump"});
+                    if (text && 
+                        text.indexOf('lanacion.com.py') >= 0 || 
+                        text.indexOf('hoy.com.py') >= 0 && 
+                        nodes[ii].style.display != 'none') {
+                            nodes[ii].style.display = 'none';
+                            chrome.runtime.sendMessage({action: "removeDiv"});
                     }
                 }
             }
