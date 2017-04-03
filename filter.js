@@ -10,8 +10,12 @@
                     var text = nodes[ii] ? nodes[ii].textContent.toLowerCase() : '';
 
                     if (text && 
-                        text.indexOf('lanacion.com.py') >= 0 || 
-                        text.indexOf('hoy.com.py') >= 0 && 
+                        (
+                            text.indexOf('lanacion.com.py') >= 0 
+                            || text.indexOf('hoy.com.py') >= 0
+                            || text.indexOf('adndigital.com.py') >= 0
+                            || text.indexOf('rtv.com.py') >= 0
+                        ) && 
                         nodes[ii].style.display != 'none') {
                             nodes[ii].style.display = 'none';
                             chrome.runtime.sendMessage({action: "removeDiv"});
